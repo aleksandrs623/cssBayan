@@ -20,14 +20,8 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px 0;
 }
-
-p {
-  margin: 0 0 5px;
-}
-
-
-/* Faq */
 
 .mems {
   max-width: 500px;
@@ -36,7 +30,6 @@ p {
 
 .mem-item {
   margin-bottom: 5px;
-
   border: 1px solid #b91125;
 }
 
@@ -90,12 +83,13 @@ p {
 }
 
 .mem-input:checked ~ .mem-text {
-  display: block;
+  max-height: 500px;
 }
 
 .mem-text {
-  display: none;
-  padding: 10px 15px;
-
+  padding: 0 15px;
   font-size: 14px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
 }
