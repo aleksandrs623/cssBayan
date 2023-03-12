@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  height: 21.875rem;
+  width: 21.875rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.625rem 0;
+}
+
+.mems {
+  max-width: 31.25rem;
+  margin: 1.25rem auto;
+}
+
+.mem-item {
+  margin-bottom: 0.3125rem;
+  border: 0.0625rem solid #b91125;
+}
+
+.mem-title {
+  display: block;
+  padding: 0.625rem 0.9375rem;
+  position: relative;
+
+  cursor: pointer;
+
+  transition: background .2s ease-out;
+}
+
+.mem-title:after {
+  content: "";
+  display: block;
+
+  border-style: solid;
+  border-width: 0.5rem 0.3125rem 0 0.3125rem;
+  border-color: #080808 transparent transparent transparent;
+
+  position: absolute;
+  top: 50%;
+  right: 0.9375rem;
+
+  transform: translateY(-50%);
+}
+
+.mem-title:hover {
+  background-color: #b91125;
+}
+
+.mem-input {
+  width: 0;
+  height: 0;
+
+  -webkit-appearance: none;
+  appearance: none;
+
+  position: absolute;
+}
+
+.mem-input:checked ~ .mem-title {
+  background-color: #b91125;
+}
+
+.mem-input:checked ~ .mem-title:after {
+  border-style: solid;
+  border-width: 0 0.3125rem 0.5rem 0.3125rem;
+  border-color: transparent transparent #fff transparent;
+}
+
+.mem-input:checked ~ .mem-text {
+  max-height: 31.25rem;
+}
+
+.mem-text {
+  padding: 0 0.9375rem;
+  font-size: 0.875rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+@media (hover: hover) {
+  .mem-title:hover + .mem-text,
+  .mem-input:checked + .mem-title + .mem-text {
+    max-height: 31.25rem;
+  }
+  .mem-item:hover .mem-title:after,
+  .mem-input:checked ~ .mem-title:after {
+    border-style: solid;
+    border-width: 0 0.3125rem 0.5rem 0.3125rem;
+    border-color: transparent transparent #fff transparent;
+  }
+}
